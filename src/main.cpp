@@ -1,15 +1,24 @@
 #include "display.h"
+#include "weather-forecast.h"
 #include <Arduino.h>
 #include <ESP8266HTTPClient.h>
 #include <ESP8266WiFi.h>
+#include <GyverOS.h>
 #include <NTPClient.h>
 #include <WiFiManager.h>
 #include <WiFiUdp.h>
 
-long current_time;
 WiFiManager wm;
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
+GyverOS<3> OS;
+
+bool isWiFiConnected = false;
+
+void loadForecast() {
+  getForecast("55.7970047", "37.9381218");
+  // simpleRequest();
+}
 
 void setup() {
   WiFi.mode(WIFI_STA); // STA+AP
@@ -17,38 +26,22 @@ void setup() {
   Serial.begin(9600);
 
   wm.setConfigPortalTimeout(60);
+  isWiFiConnected = wm.autoConnect("nextion");
 
-  if (wm.autoConnect("nextion")) {
-    Serial.println("connected...yeey :)");
-
-    timeClient.begin();
+  if (!isWiFiConnected) {
+    Serial.println("WIFI: configuration");
   } else {
-    Serial.println("Configportal running");
+    Serial.println("WIFI: connected");
   }
 
+  timeClient.begin();
   setupDisplay();
+
+  OS.attach(1, loadForecast, 10000);
 }
 
 void loop() {
+  OS.tick();
   timeClient.update();
   updateDisplay();
-
-  if (millis() - current_time >= 10000) {
-    current_time = millis();
-
-    Serial.println(timeClient.getFormattedTime());
-  }
 }
-
-// WiFiClient client;
-// HTTPClient http;
-
-// http.begin(client, "http://jsonplaceholder.typicode.com/users/1");
-// int httpCode = http.GET();
-
-// if (httpCode > 0) {
-//   String payload = http.getString();
-//   Serial.println(payload);
-// }
-
-// http.end();
