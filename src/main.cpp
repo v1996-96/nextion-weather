@@ -1,3 +1,5 @@
+#include "display.h"
+#include <Arduino.h>
 #include <ESP8266HTTPClient.h>
 #include <ESP8266WiFi.h>
 #include <NTPClient.h>
@@ -14,7 +16,6 @@ void setup() {
 
   Serial.begin(9600);
 
-  wm.setConfigPortalBlocking(false);
   wm.setConfigPortalTimeout(60);
 
   if (wm.autoConnect("nextion")) {
@@ -24,11 +25,13 @@ void setup() {
   } else {
     Serial.println("Configportal running");
   }
+
+  setupDisplay();
 }
 
 void loop() {
   timeClient.update();
-  wm.process();
+  updateDisplay();
 
   if (millis() - current_time >= 10000) {
     current_time = millis();
