@@ -1,0 +1,17 @@
+String sample =
+    "{\"now\":1653736003,\"now_dt\":\"2022-05-28T11:06:43.334648Z\",\"info\":{\"url\":\"https://"
+    "yandex.ru/pogoda/"
+    "10716?lat=55.797007\u0026lon=37.938118\",\"lat\":55.797007,\"lon\":37.938118},\"fact\":{\"obs_"
+    "time\":1653735600,\"temp\":12,\"feels_like\":9,\"icon\":\"ovc_-ra\",\"condition\":\"light-"
+    "rain\",\"wind_speed\":3.5,\"wind_dir\":\"sw\",\"pressure_mm\":735,\"pressure_pa\":979,"
+    "\"humidity\":75,\"daytime\":\"d\",\"polar\":false,\"season\":\"spring\",\"wind_gust\":7.9},"
+    "\"forecast\":{\"date\":\"2022-05-28\",\"date_ts\":1653685200,\"week\":21,\"sunrise\":\"03:"
+    "56\",\"sunset\":\"20:54\",\"moon_code\":7,\"moon_text\":\"moon-code-7\",\"parts\":[{\"part_"
+    "name\":\"evening\",\"temp_min\":9,\"temp_avg\":11,\"temp_max\":12,\"wind_speed\":4.6,\"wind_"
+    "gust\":10.3,\"wind_dir\":\"sw\",\"pressure_mm\":740,\"pressure_pa\":986,\"humidity\":74,"
+    "\"prec_mm\":0.3,\"prec_prob\":40,\"prec_period\":360,\"icon\":\"bkn_-ra_n\",\"condition\":"
+    "\"light-rain\",\"feels_like\":7,\"daytime\":\"n\",\"polar\":false},{\"part_name\":\"night\","
+    "\"temp_min\":7,\"temp_avg\":8,\"temp_max\":8,\"wind_speed\":3.1,\"wind_gust\":6.6,\"wind_"
+    "dir\":\"sw\",\"pressure_mm\":741,\"pressure_pa\":987,\"humidity\":85,\"prec_mm\":0,\"prec_"
+    "prob\":0,\"prec_period\":360,\"icon\":\"skc_n\",\"condition\":\"partly-cloudy\",\"feels_"
+    "like\":5,\"daytime\":\"n\",\"polar\":false}]}}";
