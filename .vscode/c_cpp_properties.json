@@ -10,6 +10,7 @@
             "includePath": [
                 "/Users/vitrushin/projects/nextion-weather/include",
                 "/Users/vitrushin/projects/nextion-weather/src",
+                "/Users/vitrushin/projects/nextion-weather/lib/OpenWeather",
                 "/Users/vitrushin/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src",
                 "/Users/vitrushin/.platformio/packages/framework-arduinoespressif8266/libraries/SoftwareSerial/src",
                 "/Users/vitrushin/projects/nextion-weather/.pio/libdeps/nodemcuv2/GyverOS/src",
@@ -62,6 +63,7 @@
                 "path": [
                     "/Users/vitrushin/projects/nextion-weather/include",
                     "/Users/vitrushin/projects/nextion-weather/src",
+                    "/Users/vitrushin/projects/nextion-weather/lib/OpenWeather",
                     "/Users/vitrushin/.platformio/packages/framework-arduinoespressif8266/libraries/ESP8266HTTPClient/src",
                     "/Users/vitrushin/.platformio/packages/framework-arduinoespressif8266/libraries/SoftwareSerial/src",
                     "/Users/vitrushin/projects/nextion-weather/.pio/libdeps/nodemcuv2/GyverOS/src",

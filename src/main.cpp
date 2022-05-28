@@ -1,10 +1,10 @@
 #include "display.h"
-#include "weather-forecast.h"
 #include <Arduino.h>
 #include <ESP8266HTTPClient.h>
 #include <ESP8266WiFi.h>
 #include <GyverOS.h>
 #include <NTPClient.h>
+#include <OpenWeather.h>
 #include <WiFiManager.h>
 #include <WiFiUdp.h>
 
@@ -15,10 +15,7 @@ GyverOS<3> OS;
 
 bool isWiFiConnected = false;
 
-void loadForecast() {
-  getForecast("55.7970047", "37.9381218");
-  // simpleRequest();
-}
+void loadForecast() {}
 
 void setup() {
   WiFi.mode(WIFI_STA); // STA+AP
