@@ -15,8 +15,6 @@ GyverOS<3> OS;
 
 bool isWiFiConnected = false;
 
-void loadForecast() {}
-
 void setup() {
   WiFi.mode(WIFI_STA); // STA+AP
 
@@ -33,8 +31,6 @@ void setup() {
 
   timeClient.begin();
   setupDisplay();
-
-  OS.attach(1, loadForecast, 10000);
 }
 
 void loop() {
